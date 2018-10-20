@@ -5,4 +5,4 @@ class Greeter():
 
 if __name__ == "__main__":
     g = Greeter()
-    g.hello("world")
+    g.hello("World")
