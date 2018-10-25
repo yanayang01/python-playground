@@ -59,5 +59,44 @@ def some_function(a, data=[]):
 # so it is not re-evaluated when the function is called
 # that's why it keeps adding values to the list data
 
-# keyword arguments
+# how to do this properly
+def better_function(a, data=None):
+    if data is None:
+        data = []  # create empty list
+    data.append(a)
+    return(data)
 
+# keyword arguments
+def f(a, b=5, c=10):
+    print(f"a is {a}, b is {b}, and c is {c}")
+
+# can create keyword only functions
+# forces user to use the correct keyword for each parameter
+def hello(*, name='User'):
+    print(f"Hello {name}!")
+
+# only works if you do: hello(name='Yana')
+
+# higher order functions
+# takes at least one function as an argument
+# or returns another function as an output
+
+def high_func(func, value):
+    return func(value)
+
+lst = high_func(dir, int)
+print(lst[-3:])
+# print(lst)
+
+# map function
+# takes a function and an iteratoor
+# applies the function to each value of the iterator
+# returns a list of results
+a = list(range(1, 6))
+
+def square(num):
+    "returns the square of a given number"
+    return num * num
+
+b = list(map(square, a))
+print(b)
