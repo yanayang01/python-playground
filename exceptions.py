@@ -53,7 +53,7 @@ os.chdir("/home/yana/Documents/python/python-playground")
 try:
     file = open("sample.txt", "w")
     d = 1 / 0
-except ZeroDivisonError:
+except ZeroDivisionError:
     print("Stop trying to divide by zero!")
 finally:
     file.close()
